@@ -88,6 +88,18 @@ export default {
             return false;
           return true;
         },
+        login: function(e){
+            firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+            .then(user=>{
+                alert(`Cont creat si logat automat ca si ${this.email}`);
+                  //this.$router.push('/home');
+                  window.location.href = '\home';
+            },
+            err=>{
+                alert(err.message);
+            })
+            e.preventDefault();
+        },
         register: function(e){
             if( !this.validate(this.cnp)) return alert("Cnp is empty");
             if(this.cnp.length < 12) return alert("Cnp invalid");
@@ -119,7 +131,7 @@ export default {
                       })
                   })
                 alert(`Cont creat pentru ${this.email}`);
-                  window.location.href = '\home';
+                  this.login();
             },
               err => {
                 alert(err.message);
