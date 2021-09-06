@@ -21,7 +21,7 @@
                     <th>Data</th>
                     <th>Ekg</th>
                     <th>Observatii</th>
-                    <th>Administrare</th>
+                    <!-- <th>Administrare</th> -->
                 </tr>
                 </thead>
 
